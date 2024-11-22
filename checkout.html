@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasse | Nettbutikk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="index.html#produkter">Produkter</a></li>
+                <li><a href="index.html#kategorier">Kategorier</a></li>
+                <li><a href="index.html#kontakt">Kontakt oss</a></li>
+            </ul>
+            <a href="index.html" class="logo">LOGO</a>
+            <a href="checkout.html" class="icon">🛒</a>
+        </nav>
+        <form class="search-bar">
+            <input type="text" placeholder="Søk...">
+            <button type="submit">Søk</button>
+        </form>
+    </header>
+
+    <!-- Handlekurv -->
+    <main>
+        <section class="shopping-cart">
+            <h2>Din handlekurv</h2>
+            <div class="product-card">
+                <img src="https://picsum.photos/200" alt="Produktbilde">
+                <h3>Produktnavn</h3>
+                <p>Pris: 199 NOK</p>
+                <p>Farge: Sort</p>
+            </div>
+            <!-- Gjenta for flere produkter -->
+        </section>
+
+        <!-- Personopplysninger -->
+        <section class="personal-info">
+            <h2>Dine opplysninger</h2>
+            <form>
+                <input type="text" placeholder="Fornavn" required>
+                <input type="text" placeholder="Etternavn" required>
+                <input type="text" placeholder="Gateadresse" required>
+                <input type="text" placeholder="Postnummer" required>
+                <input type="text" placeholder="Poststed" required>
+                <button type="submit">Lagre</button>
+                <button type="reset">Avbryt</button>
+            </form>
+        </section>
+
+        <!-- Levering -->
+        <section class="delivery-options">
+            <h2>Leveringsalternativer</h2>
+            <form>
+                <label><input type="radio" name="delivery" required> Ekspresslevering hjem</label>
+                <label><input type="radio" name="delivery"> Ekspress til utleveringssted</label>
+                <label><input type="radio" name="delivery"> Standard hjemlevering</label>
+            </form>
+        </section>
+
+        <!-- Betaling -->
+        <section class="payment">
+            <h2>Betaling</h2>
+            <form>
+                <input type="text" placeholder="Kortnummer" required>
+                <input type="text" placeholder="Utløpsdato" required>
+                <input type="text" placeholder="CVC/CVV" required>
+                <button type="submit">Betal</button>
+                <p><input type="checkbox" required> Jeg godtar vilkårene</p>
+                <p><input type="checkbox"> Send meg nyhetsbrev</p>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <section>
+            <h3>LOGO</h3>
+            <p>Din foretrukne nettbutikk</p>
+        </section>
+        <section>
+            <h3>Kontakt</h3>
+            <p>Email: kontakt@nettbutikk.no</p>
+            <p>Telefon: +47 123 456 78</p>
+        </section>
+        <section>
+            <h3>Snarveier</h3>
+            <ul>
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="checkout.html">Handlekurv</a></li>
+            </ul>
+        </section>
+        <section>
+            <h3>Følg oss</h3>
+            <ul>
+                <li><a href="https://instagram.com">Instagram</a></li>
+                <li><a href="https://instagram.com">Instagram</a></li>
+                <li><a href="https://instagram.com">Instagram</a></li>
+                <li><a href="https://instagram.com">Instagram</a></li>
+            </ul>
+        </section>
+    </footer>
+</body>
+</html>
