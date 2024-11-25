@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nettbutikk</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <!-- Kilde: https://www.w3schools.com/icons/fontawesome_icons_intro.asp -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="icons/css/all.css">
+    <link rel="stylesheet" href="/icons/css/solid.css">
+    <link rel="stylesheet" href="icons/css/brands.css">
 </head>
 <body>
     <!-- Header med søk, navigasjon og handlekurv -->
@@ -69,7 +71,7 @@
             <article class="product-grid">
                 <!-- 6 produktkort -->
                 <a href="product.html" class="product-card">
-                    <img src="https://picsum.photos/400" alt="Hiking Backpack">
+                    <img src="images/airiz-NGp2VfkjRXo-unsplash.jpg" alt="Air Shoes">
                     <button class="favorite-btn" aria-label="Legg til i favoritter">
                         <i class="far fa-heart"></i>
                     </button>
@@ -117,25 +119,73 @@
         <!-- Anmeldelser -->
         <section id="anmeldelser">
             <h2>Anmeldelser</h2>
-            <!-- Kilde: https://www.w3schools.com/howto/howto_css_cards.asp -->
             <article class="review-container">
+                <!-- Anmeldelse 1 -->
                 <figure class="review-card">
-                    <img src="https://picsum.photos/50" alt="Robert Labrador">
+                    <img src="https://picsum.photos/200" alt="Rober Labrador profilbilde" class="review-image">
                     <figcaption>
-                        <h3>Robert Labrador</h3>
-                        <div class="rating">
+                        <h3>Rober Labrador</h3>
+                        <span class="rating" aria-label="3 av 5 stjerner">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </span>
+                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
                     </figcaption>
                 </figure>
-                <!-- Gjenta for 3 flere anmeldelser med samme struktur -->
+        
+                <!-- Anmeldelse 2 -->
+                <figure class="review-card">
+                    <img src="https://picsum.photos/200" alt="Rober Labrador profilbilde" class="review-image">
+                    <figcaption>
+                        <h3>Rober Labrador</h3>
+                        <span class="rating" aria-label="3 av 5 stjerner">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </span>
+                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+                    </figcaption>
+                </figure>
+        
+                <!-- Anmeldelse 3 -->
+                <figure class="review-card">
+                    <img src="https://picsum.photos/200" alt="Rober Labrador profilbilde" class="review-image">
+                    <figcaption>
+                        <h3>Rober Labrador</h3>
+                        <span class="rating" aria-label="3 av 5 stjerner">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </span>
+                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+                    </figcaption>
+                </figure>
+        
+                <!-- Anmeldelse 4 -->
+                <figure class="review-card">
+                    <img src="https://picsum.photos/200" alt="Rober Labrador profilbilde" class="review-image">
+                    <figcaption>
+                        <h3>Rober Labrador</h3>
+                        <span class="rating" aria-label="3 av 5 stjerner">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </span>
+                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+                    </figcaption>
+                </figure>
             </article>
         </section>
+        
     </main>
 
     <!-- Footer -->
