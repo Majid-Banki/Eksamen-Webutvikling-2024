@@ -1,96 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produktdetaljer | Nettbutikk</title>
+    <title>Produktside - Nettbutikk</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Kilde: https://www.w3schools.com/icons/fontawesome_icons_intro.asp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
     <header>
+        <section class="search-container">
+            <input type="search" placeholder="Søk..." aria-label="Søk i nettbutikken">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </section>
         <nav>
-            <ul class="nav-list">
+            <ul>
                 <li><a href="index.html">Hjem</a></li>
-                <li><a href="index.html#produkter">Produkter</a></li>
-                <li><a href="index.html#kategorier">Kategorier</a></li>
-                <li><a href="index.html#kontakt">Kontakt oss</a></li>
+                <li><a href="#produkter">Produkter</a></li>
+                <li><a href="index.html"><img src="logo.png" alt="Nettbutikk Logo"></a></li>
+                <li><a href="#kategorier">Kategorier</a></li>
+                <li><a href="#kontakt">Kontakt oss</a></li>
             </ul>
-            <a href="index.html" class="logo">LOGO</a>
-            <a href="checkout.html" class="icon">🛒</a>
         </nav>
-        <form class="search-bar">
-            <input type="text" placeholder="Søk...">
-            <button type="submit">Søk</button>
-        </form>
+        <a href="checkout.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
     </header>
 
-    <!-- Brødsmulesti -->
     <main>
-        <nav class="breadcrumb">
-            <a href="index.html">Hjem</a> &gt;
-            <a href="index.html#produkter">Kategori</a> &gt;
-            <span>Produkt</span>
+        <!-- Kilde: https://www.w3schools.com/tags/tag_nav.asp -->
+        <nav aria-label="breadcrumb" class="breadcrumb">
+            <ul>
+                <li><a href="index.html">Hjem</a></li>
+                <li><i class="fas fa-chevron-right"></i></li>
+                <li><a href="#kategori">Kategori</a></li>
+                <li><i class="fas fa-chevron-right"></i></li>
+                <li>Produktnavn</li>
+            </ul>
         </nav>
 
-        <!-- Produktdetaljer -->
         <section class="product-details">
-            <div class="product-images">
-                <img src="https://picsum.photos/400" alt="Hovedbilde av produkt">
-                <div class="thumbnail-grid">
-                    <img src="https://picsum.photos/100" alt="Miniatyrbilde">
-                    <img src="https://picsum.photos/100" alt="Miniatyrbilde">
-                    <img src="https://picsum.photos/100" alt="Miniatyrbilde">
-                </div>
-            </div>
-            <div class="product-info">
+            <article class="product-images">
+                <img src="product-main.jpg" alt="Hovedbilde av produkt" class="main-image">
+                <section class="thumbnail-images">
+                    <img src="product-thumb1.jpg" alt="Produktbilde 1">
+                    <img src="product-thumb2.jpg" alt="Produktbilde 2">
+                    <img src="product-thumb3.jpg" alt="Produktbilde 3">
+                </section>
+            </article>
+
+            <article class="product-info">
                 <h1>Produktnavn</h1>
-                <a href="#">Merke</a>
-                <p>Pris: 499 NOK</p>
-                <p>Farge: Sort</p>
-            </div>
+                <a href="#merke">MERKE</a>
+                <p class="price">5195 kr inkl. mva</p>
+                <p>Farge: beige</p>
+                <select name="size" id="size" aria-label="Velg størrelse">
+                    <option value="">Velg størrelse</option>
+                    <option value="xs">XS</option>
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                    <option value="xl">XL</option>
+                </select>
+                <button class="favorite-btn"><i class="far fa-heart"></i> Legg til favoritter</button>
+                <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Legg i handlekurv</button>
+            </article>
         </section>
 
-        <!-- Lignende produkter -->
-        <section class="related-products">
+        <section class="similar-products">
             <h2>Lignende produkter</h2>
-            <div class="product-grid">
-                <article class="product-card">
-                    <img src="https://picsum.photos/200" alt="Relatert produkt">
-                    <h3>Relatert produkt</h3>
-                    <p>Pris: 299 NOK</p>
-                </article>
-                <!-- Gjenta fire ganger -->
-            </div>
+            <article class="product-grid">
+                <!-- Produktkort med samme struktur som på forsiden -->
+                <a href="product.html" class="product-card">
+                    <img src="product1.jpg" alt="Lignende produkt">
+                    <h3>Produktnavn</h3>
+                    <p class="price">1999 kr</p>
+                    <div class="rating">
+                        <span class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </span>
+                        <span class="review-count">(42)</span>
+                    </div>
+                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                </a>
+                <!-- Gjenta for flere produktkort -->
+            </article>
+            <a href="#se-flere" class="see-more">Se flere lignende produkter <i class="fas fa-arrow-right"></i></a>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <section>
-            <h3>LOGO</h3>
-            <p>Din foretrukne nettbutikk</p>
+        <!-- Samme footer som i index.html -->
+        <section class="footer-content">
+            <img src="logo.png" alt="Nettbutikk Logo">
+            <p>Din destinasjon for kvalitetsprodukter</p>
         </section>
-        <section>
-            <h3>Kontakt</h3>
-            <p>Email: kontakt@nettbutikk.no</p>
-            <p>Telefon: +47 123 456 78</p>
-        </section>
-        <section>
-            <h3>Snarveier</h3>
-            <ul>
-                <li><a href="index.html">Hjem</a></li>
-                <li><a href="checkout.html">Handlekurv</a></li>
-            </ul>
-        </section>
-        <section>
-            <h3>Følg oss</h3>
-            <ul>
-                <li><a href="https://instagram.com">Instagram</a></li>
-                <li><a href="https://instagram.com">Instagram</a></li>
-                <li><a href="https://instagram.com">Instagram</a></li>
-                <li><a href="https://instagram.com">Instagram</a></li>
-            </ul>
+        <section class="footer-sections">
+            <article>
+                <h3>Kontakt</h3>
+                <address>
+                    <p><i class="fas fa-map-marker-alt"></i> Eksempelgata 123, 0000 Oslo</p>
+                    <p><i class="fas fa-phone"></i> 123 45 678</p>
+                    <p><i class="fas fa-envelope"></i> kontakt@nettbutikk.no</p>
+                </address>
+            </article>
+            <article>
+                <h3>Snarveier</h3>
+                <nav>
+                    <ul>
+                        <li><a href="#hjem">Hjem</a></li>
+                        <li><a href="#produkter">Produkter</a></li>
+                        <li><a href="#kategorier">Kategorier</a></li>
+                        <li><a href="#kontakt">Kontakt oss</a></li>
+                        <li><a href="tilgjengelighetserklaering.pdf">Tilgjengelighetserklæring</a></li>
+                    </ul>
+                </nav>
+            </article>
+            <article>
+                <h3>Sosiale medier</h3>
+                <nav>
+                    <ul>
+                        <li><a href="https://instagram.com"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="https://facebook.com"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="https://linkedin.com"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="https://pinterest.com"><i class="fab fa-pinterest"></i> Pinterest</a></li>
+                    </ul>
+                </nav>
+            </article>
         </section>
     </footer>
 </body>

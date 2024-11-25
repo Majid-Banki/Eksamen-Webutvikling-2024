@@ -1,107 +1,190 @@
+<!-- Kilde: https://www.w3schools.com/html/html5_semantic_elements.asp -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kasse | Nettbutikk</title>
+    <title>Kasse - Nettbutikk</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Kilde: https://www.w3schools.com/icons/fontawesome_icons_intro.asp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <nav>
-            <ul class="nav-list">
-                <li><a href="index.html">Hjem</a></li>
-                <li><a href="index.html#produkter">Produkter</a></li>
-                <li><a href="index.html#kategorier">Kategorier</a></li>
-                <li><a href="index.html#kontakt">Kontakt oss</a></li>
-            </ul>
-            <a href="index.html" class="logo">LOGO</a>
-            <a href="checkout.html" class="icon">🛒</a>
-        </nav>
-        <form class="search-bar">
-            <input type="text" placeholder="Søk...">
-            <button type="submit">Søk</button>
-        </form>
+        <!-- Samme header som i index.html -->
     </header>
 
-    <!-- Handlekurv -->
     <main>
-        <section class="shopping-cart">
-            <h2>Din handlekurv</h2>
-            <div class="product-card">
-                <img src="https://picsum.photos/200" alt="Produktbilde">
-                <h3>Produktnavn</h3>
-                <p>Pris: 199 NOK</p>
-                <p>Farge: Sort</p>
-            </div>
-            <!-- Gjenta for flere produkter -->
+        <h1>Kasse</h1>
+
+        <section id="shopping-bag">
+            <h2>1. Din handlekurv</h2>
+            <article class="cart-item">
+                <img src="product1.jpg" alt="Produkt i handlekurv">
+                <div class="product-info">
+                    <h3>Produktnavn</h3>
+                    <p class="price">1999 kr</p>
+                    <p>Farge: Beige</p>
+                    <p>Størrelse: M</p>
+                    <p>Antall: <i class="fas fa-minus"></i> 1 <i class="fas fa-plus"></i></p>
+                </div>
+            </article>
         </section>
 
-        <!-- Personopplysninger -->
-        <section class="personal-info">
-            <h2>Dine opplysninger</h2>
+        <section id="personal-info">
+            <h2>2. Dine opplysninger</h2>
             <form>
-                <input type="text" placeholder="Fornavn" required>
-                <input type="text" placeholder="Etternavn" required>
-                <input type="text" placeholder="Gateadresse" required>
-                <input type="text" placeholder="Postnummer" required>
-                <input type="text" placeholder="Poststed" required>
+                <section class="form-row">
+                    <article class="input-group">
+                        <label for="fornavn">Fornavn*</label>
+                        <input type="text" id="fornavn" name="fornavn" required>
+                    </article>
+                    <article class="input-group">
+                        <label for="etternavn">Etternavn*</label>
+                        <input type="text" id="etternavn" name="etternavn" required>
+                    </article>
+                </section>
+
+                <article class="input-group">
+                    <label for="epost">E-post*</label>
+                    <input type="email" id="epost" name="epost" required>
+                </article>
+
+                <article class="input-group">
+                    <label for="telefon">Telefon*</label>
+                    <input type="tel" id="telefon" name="telefon" required>
+                </article>
+
+                <article class="input-group">
+                    <label for="adresse">Gateadresse*</label>
+                    <input type="text" id="adresse" name="adresse" required>
+                </article>
+
+                <section class="form-row">
+                    <article class="input-group">
+                        <label for="postnummer">Postnummer*</label>
+                        <input type="text" id="postnummer" name="postnummer" pattern="[0-9]{4}" required>
+                    </article>
+                    <article class="input-group">
+                        <label for="poststed">Poststed*</label>
+                        <input type="text" id="poststed" name="poststed" required>
+                    </article>
+                </section>
+
                 <button type="submit">Lagre</button>
-                <button type="reset">Avbryt</button>
+                <a href="#avbryt" class="cancel-btn">Avbryt</a>
             </form>
         </section>
 
-        <!-- Levering -->
-        <section class="delivery-options">
-            <h2>Leveringsalternativer</h2>
+        <section id="delivery">
+            <h2>3. Levering</h2>
             <form>
-                <label><input type="radio" name="delivery" required> Ekspresslevering hjem</label>
-                <label><input type="radio" name="delivery"> Ekspress til utleveringssted</label>
-                <label><input type="radio" name="delivery"> Standard hjemlevering</label>
+                <article class="delivery-option">
+                    <input type="radio" id="express-home" name="delivery" value="express-home">
+                    <label for="express-home">
+                        <i class="fas fa-truck"></i>
+                        <h3>Express Hjemlevering</h3>
+                        <p class="delivery-time">3-4 virkedager</p>
+                        <p class="price">99 kr</p>
+                    </label>
+                </article>
+
+                <article class="delivery-option">
+                    <input type="radio" id="express-pickup" name="delivery" value="express-pickup">
+                    <label for="express-pickup">
+                        <i class="fas fa-store"></i>
+                        <h3>Express Pakke til utleveringssted</h3>
+                        <p class="delivery-time">1-3 virkedager</p>
+                        <p class="price">79 kr</p>
+                    </label>
+                </article>
+
+                <article class="delivery-option">
+                    <input type="radio" id="standard-home" name="delivery" value="standard-home">
+                    <label for="standard-home">
+                        <i class="fas fa-home"></i>
+                        <h3>Standard Hjemlevering</h3>
+                        <p class="delivery-time">5-8 virkedager</p>
+                        <p class="price">49 kr</p>
+                    </label>
+                </article>
             </form>
         </section>
 
-        <!-- Betaling -->
-        <section class="payment">
-            <h2>Betaling</h2>
+        <section id="payment">
+            <h2>4. Betaling</h2>
             <form>
-                <input type="text" placeholder="Kortnummer" required>
-                <input type="text" placeholder="Utløpsdato" required>
-                <input type="text" placeholder="CVC/CVV" required>
-                <button type="submit">Betal</button>
-                <p><input type="checkbox" required> Jeg godtar vilkårene</p>
-                <p><input type="checkbox"> Send meg nyhetsbrev</p>
+                <i class="fas fa-credit-card"></i>
+                <article class="input-group">
+                    <label for="kortnummer">Kortnummer*</label>
+                    <input type="text" id="kortnummer" name="kortnummer" pattern="[0-9]{16}" required>
+                </article>
+
+                <section class="form-row">
+                    <article class="input-group">
+                        <label for="utlopsdato">Utløpsdato*</label>
+                        <input type="text" id="utlopsdato" name="utlopsdato" placeholder="MM/ÅÅ" pattern="(0[1-9]|1[0-2])\/([0-9]{2})" required>
+                    </article>
+                    <article class="input-group">
+                        <label for="cvc">CVC/CVV*</label>
+                        <input type="text" id="cvc" name="cvc" pattern="[0-9]{3,4}" required>
+                    </article>
+                </section>
+
+                <p class="total-price">Å betale inkl. mva: <strong>1199 kr</strong></p>
+                <button type="submit">Fullfør kjøp</button>
+
+                <article class="terms">
+                    <input type="checkbox" id="accept-terms" name="accept-terms" required>
+                    <label for="accept-terms">Ja, jeg godtar vilkårene</label>
+                </article>
+
+                <article class="newsletter">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">Ja takk! Send nyhetsbrev til meg</label>
+                </article>
             </form>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <section>
-            <h3>LOGO</h3>
-            <p>Din foretrukne nettbutikk</p>
+        <!-- Samme footer som i index.html -->
+        <section class="footer-content">
+            <img src="logo.png" alt="Nettbutikk Logo">
+            <p>Din destinasjon for kvalitetsprodukter</p>
         </section>
-        <section>
-            <h3>Kontakt</h3>
-            <p>Email: kontakt@nettbutikk.no</p>
-            <p>Telefon: +47 123 456 78</p>
-        </section>
-        <section>
-            <h3>Snarveier</h3>
-            <ul>
-                <li><a href="index.html">Hjem</a></li>
-                <li><a href="checkout.html">Handlekurv</a></li>
-            </ul>
-        </section>
-        <section>
-            <h3>Følg oss</h3>
-            <ul>
-                <li><a href="https://instagram.com">Instagram</a></li>
-                <li><a href="https://instagram.com">Instagram</a></li>
-                <li><a href="https://instagram.com">Instagram</a></li>
-                <li><a href="https://instagram.com">Instagram</a></li>
-            </ul>
+        <section class="footer-sections">
+            <article>
+                <h3>Kontakt</h3>
+                <address>
+                    <p><i class="fas fa-map-marker-alt"></i> Eksempelgata 123, 0000 Oslo</p>
+                    <p><i class="fas fa-phone"></i> 123 45 678</p>
+                    <p><i class="fas fa-envelope"></i> kontakt@nettbutikk.no</p>
+                </address>
+            </article>
+            <article>
+                <h3>Snarveier</h3>
+                <nav>
+                    <ul>
+                        <li><a href="#hjem">Hjem</a></li>
+                        <li><a href="#produkter">Produkter</a></li>
+                        <li><a href="#kategorier">Kategorier</a></li>
+                        <li><a href="#kontakt">Kontakt oss</a></li>
+                        <li><a href="tilgjengelighetserklaering.pdf">Tilgjengelighetserklæring</a></li>
+                    </ul>
+                </nav>
+            </article>
+            <article>
+                <h3>Sosiale medier</h3>
+                <nav>
+                    <ul>
+                        <li><a href="https://instagram.com"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="https://facebook.com"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="https://linkedin.com"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="https://pinterest.com"><i class="fab fa-pinterest"></i> Pinterest</a></li>
+                    </ul>
+                </nav>
+            </article>
         </section>
     </footer>
 </body>

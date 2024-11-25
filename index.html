@@ -1,105 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forside | Nettbutikk</title>
+    <title>Nettbutikk</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Kilde: https://www.w3schools.com/icons/fontawesome_icons_intro.asp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header: Inneholder logo, navigasjon, søk og ikon -->
     <header>
+        <section class="search-container">
+            <input type="search" placeholder="Søk..." aria-label="Søk i nettbutikken">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </section>
         <nav>
-            <ul class="nav-list">
+            <ul>
                 <li><a href="index.html">Hjem</a></li>
                 <li><a href="#produkter">Produkter</a></li>
+                <li><a href="index.html"><img src="logo.png" alt="Nettbutikk Logo"></a></li>
                 <li><a href="#kategorier">Kategorier</a></li>
                 <li><a href="#kontakt">Kontakt oss</a></li>
             </ul>
-            <a href="index.html" class="logo">LOGO</a>
-            <a href="checkout.html" class="icon">🛒</a>
         </nav>
-        <form class="search-bar">
-            <input type="text" placeholder="Søk...">
-            <button type="submit">Søk</button>
-        </form>
+        <a href="checkout.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
     </header>
 
-    <!-- Banner seksjon -->
     <main>
-        <section class="banner">
-            <h1>Velkommen til vår nettbutikk</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <a href="#produkter" class="button">Utforsk nå</a>
+        <!-- Banner/Slider seksjon -->
+        <section class="slider-container">
+            <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <article class="slider-content">
+                <div class="slide active">
+                    <h1>Velkommen til vår nettbutikk</h1>
+                    <p>Opplev kvalitet og stil</p>
+                    <a href="#produkter" class="cta-button">Se våre produkter</a>
+                </div>
+                <div class="slide">
+                    <h1>Høstens nyheter</h1>
+                    <p>Utforsk sesongens beste</p>
+                    <a href="#nyheter" class="cta-button">Se kolleksjon</a>
+                </div>
+                <div class="slide">
+                    <h1>Spesialtilbud</h1>
+                    <p>Spar stort denne uken</p>
+                    <a href="#tilbud" class="cta-button">Se tilbud</a>
+                </div>
+            </article>
+            <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
         </section>
 
-        <!-- Populære produkter -->
         <section id="produkter">
             <h2>Våre mest populære produkter</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <div class="product-grid">
-                <article class="product-card">
-                    <img src="https://picsum.photos/200" alt="Produktbilde">
+            <p>Utforsk våre bestselgere</p>
+            <nav class="filter-buttons">
+                <button><i class="fas fa-star"></i> Nye produkter</button>
+                <button><i class="fas fa-tag"></i> Tilbud</button>
+                <button><i class="fas fa-crown"></i> Bestselgere</button>
+            </nav>
+            <article class="product-grid">
+                <!-- Produktkort med rating -->
+                <a href="product.html" class="product-card">
+                    <img src="product1.jpg" alt="Produktnavn">
                     <h3>Produktnavn</h3>
-                    <p>Pris: 199 NOK</p>
-                </article>
-                <!-- Gjenta seks ganger -->
-            </div>
+                    <p class="price">1999 kr</p>
+                    <div class="rating">
+                        <span class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </span>
+                        <span class="review-count">(42)</span>
+                    </div>
+                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                </a>
+                <!-- Gjenta for flere produktkort -->
+            </article>
         </section>
 
-        <!-- Populære kategorier -->
         <section id="kategorier">
             <h2>Våre mest populære kategorier</h2>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <div class="category-grid">
-                <div class="category-card">
+            <article class="category-grid">
+                <!-- Kategorikort med bakgrunnsbilder -->
+                <a href="#" class="category-card">
                     <h3>Kategori 1</h3>
-                </div>
-                <!-- Gjenta for flere kategorier -->
-            </div>
+                </a>
+                <!-- Gjenta for flere kategorikort -->
+            </article>
         </section>
 
-        <!-- Anmeldelser -->
         <section id="anmeldelser">
             <h2>Anmeldelser</h2>
-            <div class="review-grid">
-                <article class="review-card">
-                    <img src="https://picsum.photos/100" alt="Anmelderbilde">
-                    <h3>Anmeldernavn</h3>
-                    <p>Lorem ipsum dolor sit amet...</p>
-                </article>
-                <!-- Gjenta fire ganger -->
-            </div>
+            <article class="review-container">
+                <!-- Anmeldelseskort -->
+                <figure class="review-card">
+                    <img src="user1.jpg" alt="Bruker avatar">
+                    <figcaption>
+                        <h3>Robert Labrador</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.</p>
+                    </figcaption>
+                </figure>
+                <!-- Gjenta for flere anmeldelser -->
+            </article>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer id="kontakt">
-        <section>
-            <h3>LOGO</h3>
-            <p>Din foretrukne nettbutikk</p>
+    <footer>
+        <section class="footer-content">
+            <img src="logo.png" alt="Nettbutikk Logo">
+            <p>Din destinasjon for kvalitetsprodukter</p>
         </section>
-        <section>
-            <h3>Kontakt</h3>
-            <p>Email: kontakt@nettbutikk.no</p>
-            <p>Telefon: +47 123 456 78</p>
-        </section>
-        <section>
-            <h3>Snarveier</h3>
-            <ul>
-                <li><a href="index.html">Hjem</a></li>
-                <li><a href="checkout.html">Handlekurv</a></li>
-            </ul>
-        </section>
-        <section>
-            <h3>Følg oss</h3>
-            <ul>
-                <li><a href="https://instagram.com">Instagram</a></li>
-                <li><a href="https://instagram.com">Instagram</a></li>
-                <li><a href="https://instagram.com">Instagram</a></li>
-                <li><a href="https://instagram.com">Instagram</a></li>
-                
-            </ul>
+        <section class="footer-sections">
+            <article>
+                <h3>Kontakt</h3>
+                <address>
+                    <p><i class="fas fa-map-marker-alt"></i> Eksempelgata 123, 0000 Oslo</p>
+                    <p><i class="fas fa-phone"></i> 123 45 678</p>
+                    <p><i class="fas fa-envelope"></i> kontakt@nettbutikk.no</p>
+                </address>
+            </article>
+            <article>
+                <h3>Snarveier</h3>
+                <nav>
+                    <ul>
+                        <li><a href="#hjem">Hjem</a></li>
+                        <li><a href="#produkter">Produkter</a></li>
+                        <li><a href="#kategorier">Kategorier</a></li>
+                        <li><a href="#kontakt">Kontakt oss</a></li>
+                        <li><a href="tilgjengelighetserklaering.pdf">Tilgjengelighetserklæring</a></li>
+                    </ul>
+                </nav>
+            </article>
+            <article>
+                <h3>Sosiale medier</h3>
+                <nav>
+                    <ul>
+                        <li><a href="https://instagram.com"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="https://facebook.com"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="https://linkedin.com"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="https://pinterest.com"><i class="fab fa-pinterest"></i> Pinterest</a></li>
+                    </ul>
+                </nav>
+            </article>
         </section>
     </footer>
 </body>
