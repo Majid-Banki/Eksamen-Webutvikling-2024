@@ -1,3 +1,4 @@
+<!-- Kilde: https://www.w3schools.com/html/html5_semantic_elements.asp -->
 <!DOCTYPE html>
 <html lang="no">
 <head>
@@ -9,61 +10,71 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Header med søk, navigasjon og handlekurv -->
     <header>
         <section class="search-container">
-            <input type="search" placeholder="Søk..." aria-label="Søk i nettbutikken">
+            <input type="search" placeholder="Søk her..." aria-label="Søk">
             <button type="submit"><i class="fas fa-search"></i></button>
         </section>
         <nav>
             <ul>
                 <li><a href="index.html">Hjem</a></li>
                 <li><a href="#produkter">Produkter</a></li>
-                <li><a href="index.html"><img src="logo.png" alt="Nettbutikk Logo"></a></li>
+                <li class="logo"><a href="index.html"><img src="logo.png" alt="Logo"></a></li>
                 <li><a href="#kategorier">Kategorier</a></li>
                 <li><a href="#kontakt">Kontakt oss</a></li>
             </ul>
         </nav>
-        <a href="checkout.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+        <section class="user-nav">
+            <a href="#konto" aria-label="Min konto"><i class="fas fa-user"></i></a>
+            <a href="#favoritter" aria-label="Mine favoritter"><i class="fas fa-heart"></i></a>
+            <a href="checkout.html" aria-label="Handlekurv"><i class="fas fa-shopping-cart"></i></a>
+        </section>
     </header>
 
     <main>
         <!-- Banner/Slider seksjon -->
         <section class="slider-container">
-            <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn prev" aria-label="Forrige slide"><i class="fas fa-chevron-left"></i></button>
             <article class="slider-content">
                 <div class="slide active">
-                    <h1>Velkommen til vår nettbutikk</h1>
-                    <p>Opplev kvalitet og stil</p>
-                    <a href="#produkter" class="cta-button">Se våre produkter</a>
+                    <h1>Et harum quidem rerum facilis est et expedita distinctio</h1>
+                    <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit</p>
+                    <a href="#les-mer" class="cta-button">Les mer</a>
                 </div>
                 <div class="slide">
-                    <h1>Høstens nyheter</h1>
-                    <p>Utforsk sesongens beste</p>
-                    <a href="#nyheter" class="cta-button">Se kolleksjon</a>
+                    <h1>Nam libero tempore soluta nobis</h1>
+                    <p>Cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
+                    <a href="#les-mer" class="cta-button">Les mer</a>
                 </div>
                 <div class="slide">
-                    <h1>Spesialtilbud</h1>
-                    <p>Spar stort denne uken</p>
-                    <a href="#tilbud" class="cta-button">Se tilbud</a>
+                    <h1>Temporibus autem quibusdam</h1>
+                    <p>Et aut officiis debitis aut rerum necessitatibus saepe eveniet.</p>
+                    <a href="#les-mer" class="cta-button">Les mer</a>
                 </div>
             </article>
-            <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+            <button class="slider-btn next" aria-label="Neste slide"><i class="fas fa-chevron-right"></i></button>
         </section>
 
+        <!-- Produktseksjon -->
         <section id="produkter">
             <h2>Våre mest populære produkter</h2>
-            <p>Utforsk våre bestselgere</p>
+            <p>Oppdag det beste av det beste</p>
             <nav class="filter-buttons">
-                <button><i class="fas fa-star"></i> Nye produkter</button>
-                <button><i class="fas fa-tag"></i> Tilbud</button>
-                <button><i class="fas fa-crown"></i> Bestselgere</button>
+                <button><i class="fas fa-star"></i> New Product</button>
+                <button><i class="fas fa-tag"></i> Special Price</button>
+                <button><i class="fas fa-crown"></i> Best Sellers</button>
             </nav>
+            <!-- Kilde: https://www.w3schools.com/css/css3_flexbox.asp -->
             <article class="product-grid">
-                <!-- Produktkort med rating -->
+                <!-- 6 produktkort -->
                 <a href="product.html" class="product-card">
-                    <img src="product1.jpg" alt="Produktnavn">
-                    <h3>Produktnavn</h3>
-                    <p class="price">1999 kr</p>
+                    <img src="https://picsum.photos/400" alt="Hiking Backpack">
+                    <button class="favorite-btn" aria-label="Legg til i favoritter">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <h3>Hiking Backpack Pro</h3>
+                    <p class="price">Kr 1999</p>
                     <div class="rating">
                         <span class="stars">
                             <i class="fas fa-star"></i>
@@ -72,31 +83,44 @@
                             <i class="fas fa-star"></i>
                             <i class="far fa-star"></i>
                         </span>
-                        <span class="review-count">(42)</span>
+                        <span class="review-count">(842 Reviews)</span>
                     </div>
-                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
                 </a>
-                <!-- Gjenta for flere produktkort -->
+                <!-- Gjenta for 5 flere produktkort med samme struktur -->
             </article>
         </section>
 
+        <!-- Kategoriseksjon -->
         <section id="kategorier">
             <h2>Våre mest populære kategorier</h2>
+            <p>Oppdag det beste av det beste</p>
+            <!-- Kilde: https://www.w3schools.com/css/css_grid.asp -->
             <article class="category-grid">
-                <!-- Kategorikort med bakgrunnsbilder -->
-                <a href="#" class="category-card">
-                    <h3>Kategori 1</h3>
+                <a href="#" class="category-card" style="background-image: url('https://picsum.photos/400')">
+                    <h3>OUTDOOR GEAR</h3>
                 </a>
-                <!-- Gjenta for flere kategorikort -->
+                <a href="#" class="category-card" style="background-image: url('https://picsum.photos/401')">
+                    <h3>FOOTWEAR</h3>
+                </a>
+                <a href="#" class="category-card" style="background-image: url('https://picsum.photos/402')">
+                    <h3>CLOTHING</h3>
+                </a>
+                <a href="#" class="category-card" style="background-image: url('https://picsum.photos/403')">
+                    <h3>ACCESSORIES</h3>
+                </a>
+                <a href="#" class="category-card" style="background-image: url('https://picsum.photos/404')">
+                    <h3>EQUIPMENT</h3>
+                </a>
             </article>
         </section>
 
+        <!-- Anmeldelser -->
         <section id="anmeldelser">
             <h2>Anmeldelser</h2>
+            <!-- Kilde: https://www.w3schools.com/howto/howto_css_cards.asp -->
             <article class="review-container">
-                <!-- Anmeldelseskort -->
                 <figure class="review-card">
-                    <img src="user1.jpg" alt="Bruker avatar">
+                    <img src="https://picsum.photos/50" alt="Robert Labrador">
                     <figcaption>
                         <h3>Robert Labrador</h3>
                         <div class="rating">
@@ -106,33 +130,35 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.</p>
+                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
                     </figcaption>
                 </figure>
-                <!-- Gjenta for flere anmeldelser -->
+                <!-- Gjenta for 3 flere anmeldelser med samme struktur -->
             </article>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <section class="footer-content">
-            <img src="logo.png" alt="Nettbutikk Logo">
-            <p>Din destinasjon for kvalitetsprodukter</p>
+            <img src="logo.png" alt="Logo">
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.</p>
         </section>
         <section class="footer-sections">
             <article>
                 <h3>Kontakt</h3>
                 <address>
-                    <p><i class="fas fa-map-marker-alt"></i> Eksempelgata 123, 0000 Oslo</p>
-                    <p><i class="fas fa-phone"></i> 123 45 678</p>
-                    <p><i class="fas fa-envelope"></i> kontakt@nettbutikk.no</p>
+                    <p><i class="fas fa-map-marker-alt"></i> B R A Veien 4, 1757 Halden</p>
+                    <p><i class="fas fa-phone"></i> 69 60 80 00</p>
+                    <p><i class="fas fa-envelope"></i> halden@hiof.no</p>
+                    <p><i class="fas fa-clock"></i> Åpningstider: Stengt 15:00</p>
                 </address>
             </article>
             <article>
                 <h3>Snarveier</h3>
                 <nav>
                     <ul>
-                        <li><a href="#hjem">Hjem</a></li>
+                        <li><a href="index.html">Hjem</a></li>
                         <li><a href="#produkter">Produkter</a></li>
                         <li><a href="#kategorier">Kategorier</a></li>
                         <li><a href="#kontakt">Kontakt oss</a></li>
