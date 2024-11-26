@@ -66,7 +66,6 @@ header {
 nav ul {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: var(--spacing-md);
   list-style: none;
 }
@@ -251,8 +250,8 @@ nav ul li a {
 }
 
 .review-card h3 {
-  font-size: 1.2rem;
-  font-weight: 500; /* Justert fontvekt */
+  font-weight: 700; /* Gjør navnet fetere */
+  font-size: 1.1rem; /* Reduserer tekststørrelsen litt */
   margin-bottom: var(--spacing-xs);
 }
 
@@ -264,7 +263,8 @@ nav ul li a {
 .review-card p {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #666; /* Mørkere grå for bedre lesbarhet */
+  color: #333; /* Mørkere tekstfarge enn før */
+  max-width: 90%; /* Begrenser tekstbredden */
 }
 
 
@@ -295,7 +295,6 @@ details[open] summary::after {
 }
 
 /* Footer */
-/* Footer */
 footer {
   margin-top: var(--spacing-lg);
   padding: var(--spacing-lg);
@@ -317,23 +316,47 @@ footer {
 }
 
 /* Footer seksjoner - mobile first */
-.footer-sections {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
+/* Footer */
+footer {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background: var(--gray-light);
+  width: 100%;
 }
 
-.footer-sections article {
+/* Logo og ingress */
+.footer-content {
+  width: 100%;
+  margin-bottom: var(--spacing-lg);
+  text-align: left;
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid #ddd;
+}
+
+.footer-content img {
   margin-bottom: var(--spacing-md);
 }
 
+/* Footer seksjoner  */
+.footer-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+.footer-sections article:last-child {
+  grid-column: 1 / -1;
+}
+
+/* Footer overskrifter  */
 .footer-sections h3 {
   font-size: 1.2rem;
   margin-bottom: var(--spacing-md);
   font-weight: bold;
+  text-transform: uppercase;
+  text-align: left; /* Venstrejustert på mobil */
 }
 
-/* Kontakt styling */
+/* Kontakt styling  */
 .footer-sections address {
   font-style: normal;
   line-height: 2;
@@ -344,35 +367,37 @@ footer {
   align-items: center;
   gap: var(--spacing-sm);
 }
+.footer-sections address p i {
+  width: 20px;
+}
+.footer-sections address p strong {
+  margin-right: var(--spacing-xs);
+}
 
-/* Snarveier og sosiale medier */
+/* Snarveier styling */
 .footer-sections nav ul {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  text-align: left; /* Venstrejustert på mobil */
 }
 
-.footer-sections nav ul li {
-  margin-bottom: var(--spacing-sm);
-}
 
 .footer-sections nav ul li a {
   text-decoration: none;
   color: var(--primary-color);
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
 }
 
-/* Desktop styling */
-@media screen and (min-width: 768px) {
-  .footer-sections {
-      flex-direction: row;
-      justify-content: flex-start; /* Endret fra space-between */
-      gap: var(--spacing-lg);
-  }
-  
-  .footer-sections article {
-      flex: 1;
-  }
+/* Sosiale medier styling */
+.footer-sections article:last-child nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-lg);
+}
+
+.footer-sections article:last-child nav ul li a {
+  font-size: 1.5rem;
 }
 
 
@@ -427,7 +452,24 @@ footer {
   }
 
   .footer-sections {
-      flex-direction: row;
-      justify-content: space-between;
-  }
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-sections h3 {
+    text-align: left; /* Beholder venstrejustering på desktop */
+}
+
+.footer-sections nav ul {
+    text-align: left; /* Beholder venstrejustering på desktop */
+}
+.footer-sections {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.footer-sections article:last-child {
+  grid-column: auto;
+}
 }
