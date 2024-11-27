@@ -11,11 +11,11 @@
   --spacing-lg: 2rem;
 }
 
-/* Grunnleggende reset - Kilde: https://www.w3schools.com/css/css3_box-sizing.asp */
+/* Grunnleggende reset  */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+
 }
 
 body {
@@ -26,7 +26,7 @@ body {
   padding: var(--spacing-md);
 }
 
-/* Header styling - Mobile first */
+/* Header styling */
 header {
   display: flex;
   flex-direction: column;
@@ -86,6 +86,12 @@ nav ul li a {
   color: var(--primary-color);
   font-size: 20px;
   padding: var(--spacing-sm);
+}
+.nav-list li:nth-child(3) a {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+
 }
 
 /* Banner/Slider - Kilde: https://www.w3schools.com/howto/howto_js_slideshow.asp */
@@ -149,7 +155,7 @@ nav ul li a {
   width: 100%;
   height: 300px;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 20px;
 }
 
 /* Favorite button */
@@ -191,28 +197,127 @@ nav ul li a {
 
 .category-card {
   position: relative;
-  height: 200px;
-  border-radius: 8px;
+  height: 250px;
+  border-radius: 20px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
 }
 
 .category-card h3 {
-  color: var(--secondary-color);
   position: relative;
   z-index: 2;
-  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: 4px;
 }
 
 .category-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
+
+.category-card:hover {
+    transform: scale(1.05);
+}
+.kategori-kort {
+  position: relative;
+  border-radius: 25px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 130px 0;
+  overflow: hidden;
+
+  &::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: brightness(70%);
+    /* opacity: 0.4; */
+    z-index: 1;
+  }
+  h3{
+    position: relative;
+    z-index: 2;
+    padding: 0;
+    margin: 0;
+    color: white;
+  }
+}
+
+.kategori {
+  text-align: center;
+}
+
+.Kategorieoverskrift {
+  font-size: 25px;
+}
+#produkter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+#produkter h2 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+#produkter p {
+  font-size: 1rem;
+  color: var(--gray-dark);
+  margin-bottom: var(--spacing-md);
+}
+.filter-buttons {
+  display: flex;
+  gap: var(--spacing-sm); /* Gir mellomrom mellom knappene */
+  justify-content: center; /* Sentraliserer knappene */
+  margin: var(--spacing-md) 0; /* Gir avstand over og under knappene */
+}
+
+.filter-buttons button {
+  background-color: transparent; /* Standard bakgrunn */
+  border: 2px solid var(--gray-dark); /* Synlig kantlinje */
+  color: var(--gray-dark); /* Tekstfarge */
+  border-radius: 50px; /* Gjør knappene runde */
+  padding: 0.5rem 1.5rem; /* Juster størrelse */
+  font-size: 1rem; /* Juster tekststørrelse */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-buttons button:hover {
+  background-color: var(--gray-dark); /* Fyll knapp ved hover */
+  color: var(--secondary-color); /* Endre tekstfarge ved hover */
+}
+
+.filter-buttons button:first-child {
+  background-color: var(--primary-color); /* Sort bakgrunn for første knapp */
+  color: var(--secondary-color); /* Hvit tekst for første knapp */
+  border: none; /* Fjern kantlinje for første knapp */
+}
+
+.filter-buttons button:first-child:hover {
+  background-color: #333; /* Mørkere hover-effekt */
+}
+
 
 /* Reviews Section */
 .review-container {
@@ -294,44 +399,34 @@ details[open] summary::after {
   content: '-';
 }
 
-/* Footer */
-footer {
-  margin-top: var(--spacing-lg);
-  padding: var(--spacing-lg);
-  background: var(--gray-light);
-  width: 100%;
-}
-
 /* Logo og ingress */
 .footer-content {
   width: 100%;
   margin-bottom: var(--spacing-lg);
   text-align: left; /* Endret fra center til left */
   padding-bottom: var(--spacing-lg);
-  border-bottom: 1px solid #ddd; /* Legg til linje under */
 }
 
 .footer-content img {
   margin-bottom: var(--spacing-md);
 }
 
-/* Footer seksjoner - mobile first */
-/* Footer */
+/* Footer seksjoner */
+
 footer {
   margin-top: var(--spacing-lg);
   padding: var(--spacing-lg);
-  background: var(--gray-light);
+  background: white; /* Setter hvit bakgrunn */
   width: 100%;
 }
 
-/* Logo og ingress */
-.footer-content {
-  width: 100%;
-  margin-bottom: var(--spacing-lg);
-  text-align: left;
-  padding-bottom: var(--spacing-lg);
-  border-bottom: 1px solid #ddd;
+/* Legger til styling for horisontal linje */
+footer hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin-bottom: var(--spacing-md); /* Avstand mellom linje og logo */
 }
+
 
 .footer-content img {
   margin-bottom: var(--spacing-md);
@@ -417,6 +512,367 @@ footer {
   transform: translateX(-50%);
 }
 
+/* Seksjon for relaterte produkter */
+.related-products {
+  overflow: hidden; /* Skjuler elementer utenfor synsfeltet */
+  padding: var(--spacing-md); /* Litt luft rundt */
+  position: relative; /* For å plassere knappene absolutt */
+}
+
+/* Grid for relaterte produkter */
+.related-products-grid {
+  display: flex; /* Gjør elementene horisontale */
+  gap: var(--spacing-lg); /* Avstand mellom hvert produktkort */
+  overflow-x: scroll; /* Mulighet for horisontal skrolling */
+  scroll-behavior: smooth; /* Myk skrolling */
+  padding-bottom: var(--spacing-sm); /* Gir litt avstand nederst */
+}
+
+/* Styling for produktkort */
+.related-product-card {
+  flex: 0 0 auto; /* Holder kortene i samme størrelse og plasserer de horisontalt */
+  width: 220px; /* Fast bredde for hvert produktkort */
+  border-radius: 10px; /* Runde hjørner */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Gir en svak skygge for dybde */
+  transition: transform 0.3s ease; /* Myk zoom-effekt ved hover */
+}
+
+.related-product-card:hover {
+  transform: scale(1.05); /* Zoom inn litt ved hover */
+}
+
+/* Venstre og høyre knapp for slideren */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  z-index: 2; /* Sørger for at knappen alltid er over produktene */
+}
+
+.slider-btn.left {
+  left: 10px; /* Plasserer venstre knapp til venstre i seksjonen */
+}
+
+.slider-btn.right {
+  right: 10px; /* Plasserer høyre knapp til høyre i seksjonen */
+}
+
+.slider-btn:hover {
+  background: var(--accent-color); /* Endrer farge ved hover for bedre visuell tilbakemelding */
+}
+
+/* PRODUKT SIDE*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Nytt kroppsstil */
+.kropp {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Container */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Global header - mobil */
+.global-header-ny {
+  display: flex;
+  flex-direction: column; /* For mobil: Elementer ligger under hverandre */
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Søkeform */
+.sok-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 350px;
+  margin: 1rem auto;
+}
+
+.sok-form input[type="text"] {
+  width: 100%;
+  max-width: 350px;
+  padding: 0.5rem;
+  border: 1px solid #222;
+  border-radius: 5px 0 0 5px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.sok-form label {
+  display: inline-block;
+  background: #222;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.sok-form label i {
+  font-size: 1.2rem;
+}
+
+/* Navigasjon */
+.navigasjon-ny {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navigasjon-liste-ny {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.navigasjon-liste-ny a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Logo */
+.logo img {
+  width: 120px;
+}
+
+/* Navigasjonsikoner */
+.user-nav {
+  gap: 1rem;
+}
+
+/* Slider */
+.slider-container {
+  position: relative;
+  max-width: 100%;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.slider-content {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+.cta-button {
+  background: white;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.slider-btn.prev {
+  left: 10px;
+}
+
+.slider-btn.next {
+  right: 10px;
+}
+
+
+/* Ikon-liste */
+.ikon-liste-ny {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.ikon-liste-ny li a {
+  color: #333;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+/* Produkt Wrapper */
+.produkt-innpakning-ny {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+/* Produktbilder */
+.produkt-bilder-ny {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.produkt-bilder-ny figure {
+  margin: 0;
+}
+
+.produkt-bilder-ny img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+/* Produktdetaljer */
+.produkt-detaljer-ny {
+  flex: 1 1 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.produkt-detaljer-ny h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.produkt-detaljer-ny p {
+  font-size: 1.1rem;
+}
+
+/* Knapper for favoritter og handlekurv */
+.knapp-favoritt,
+.knapp-handlekurv {
+  padding: 0.8rem;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 0.5rem;
+}
+
+.knapp-favoritt:hover,
+.knapp-handlekurv:hover {
+  background: #ff6f61;
+}
+
+/* Relaterte produkter seksjon */
+.relaterte-produkter-ny {
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.relaterte-produkter-ny h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Grid for relaterte produkter */
+.relaterte-produkter-grid-ny {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.produktkort-relatert-ny {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.produktkort-relatert-ny:hover {
+  transform: scale(1.05);
+}
+
+.produktkort-relatert-ny img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
+.produktkort-relatert-ny h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.produktkort-relatert-ny p {
+  font-size: 1rem;
+  color: #777;
+}
+
+/* Footer */
+.footer-ny {
+  border-top: 1px solid #ddd;
+  margin-top: 3rem;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+.footer-ny h2 {
+  font-size: 1.5rem;
+}
+
+.footer-ny p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+
+/* PRODUKT SIDE*/
+
+
+
 /* Desktop Styles */
 @media screen and (min-width: 768px) {
   header {
@@ -438,13 +894,46 @@ footer {
   }
 
   .category-grid {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto auto;
-  }
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tre kolonner */
+    grid-auto-rows: auto; /* Dynamisk tilpasset høyde */
+    gap: var(--spacing-md); /* Mellomrom mellom elementene */
+    align-items: start; /* Flytt opp elementer hvis mulig */
+}
 
-  .category-grid > *:nth-child(4) {
-      grid-column: span 2;
-  }
+/* Plassering av kategorikortene */
+
+.Kategorieoverskrift {
+  font-size: 35px;
+}
+
+.kategoribilder {
+  display: grid;
+  /* grid-template-columns: 33% 33% 33%; */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 12px;
+  grid-auto-rows: 20px;
+  margin-top: 5%;
+}
+
+.kategori-kort:nth-child(1) {
+  grid-row: span 10;
+}
+.kategori-kort:nth-child(2) {
+  grid-row: span 10;
+}
+.kategori-kort:nth-child(3) {
+  grid-row: span 15;
+}
+.kategori-kort:nth-child(4) {
+  grid-column: span 2;
+  grid-row: span 14;
+}
+.kategori-kort:nth-child(5) {
+  grid-column: span 1;
+  grid-row: span 9;
+}
+
 
   .product-images {
       position: sticky;
@@ -473,3 +962,33 @@ footer {
   grid-column: auto;
 }
 }
+.related-product-card {
+  width: 180px; /* Reduserer bredden på produktkortene på mindre skjermer */
+}
+
+.slider-btn {
+  display: none; /* Skjuler knappene på mobile enheter - kan skrolle med swipe */
+}
+
+
+  .global-header-ny {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 2rem;
+  }
+
+  .produkt-innpakning-ny {
+      flex-direction: row;
+      gap: 2rem;
+  }
+
+  .relaterte-produkter-grid-ny {
+      grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer-ny {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 3rem 1rem;
+  }
+
